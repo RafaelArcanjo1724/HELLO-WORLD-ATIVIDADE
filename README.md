@@ -3,31 +3,31 @@ Este projeto contém um programa simples em Java rodando dentro de um container 
 Sendo o DockerFile e o Docker compose feitos com a assistência do Chat GPT:
 
 
-Arquivos:
-- "Helloworld.java":
+# Arquivos:
+# - "Helloworld.java":
 public class Helloworld {
     public static void main(String[] args) {
         System.out.println("Hello World");
     }
 }
 
-- "Dockerfile":
-# Usar imagem base do JDK
+# "Dockerfile":
+Usar imagem base do JDK
 FROM openjdk:25
 
-# Criar diretório de trabalho
+Criar diretório de trabalho
 WORKDIR /app
 
-# Copiar os arquivos para dentro do container
+Copiar os arquivos para dentro do container
 COPY . .
 
-# Compilar o programa
+Compilar o programa
 RUN javac Helloworld.java
 
-# Rodar o programa
+Rodar o programa
 CMD ["java", "Helloworld"]
 
-- "docker-compose.yml":
+# - "docker-compose.yml":
 
 version: "3.8"
 services:
@@ -38,9 +38,9 @@ services:
 
 
 
-Como rodar:
+# Como rodar:
 Criar pasta com os arquivos e abrir o terminal dentro da pasta e escrever os comandos.
-#Usando Docker direto:
+Usando Docker direto:
 ```bash
 docker build -t hello-java .
 docker run --rm hello-java
